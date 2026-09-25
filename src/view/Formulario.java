@@ -18,7 +18,7 @@ import javax.swing.JTextField;
 public class Formulario {
 
     private JFrame form;
-    private JLabel lblValor, lblPrazo, lblTipo, lblResultado;
+    private JLabel lblValor, lblPrazo, lblTipo, lblResultado, lblLucro;
     private JTextField txtValor, txtPrazo;
     private JComboBox<String> cbxInvestimento;
     private JButton btnCalcular;
@@ -41,12 +41,15 @@ public class Formulario {
         lblPrazo = new JLabel("Prazo (meses):");
         lblPrazo.setBounds(30, 70, 150, 25);
 
+        lblLucro = new JLabel("Rendimento Bruto / Lucro: R$ 0.00");
+        lblLucro.setBounds(30, 220, 350, 25);       
+        
         lblTipo = new JLabel("Tipo de Taxa:");
         lblTipo.setBounds(30, 110, 150, 25);
 
         lblResultado = new JLabel("Resultado: R$ 0.00");
-        lblResultado.setBounds(30, 200, 350, 25);
-
+        lblResultado.setBounds(30, 195, 350, 25);
+        
         txtValor = new JTextField();
         txtValor.setBounds(180, 30, 150, 25);
         txtValor.addKeyListener(new KeyAdapter() {
@@ -101,9 +104,12 @@ public class Formulario {
 
                     Aplicacao app = new Aplicacao();
                     app.calcularRendimento(valor, prazo, taxa);
-
+                    
+                    float lucro = app.getMontante() - valor;
+                    
                     lblResultado.setText(String.format("Resultado: R$ %.2f", app.getMontante()));
-
+                    lblLucro.setText(String.format("Rendimento Bruto: R$ %.2f", lucro));
+                    
                 } catch (NumberFormatException ex) {
                     JOptionPane.showMessageDialog(
                         form, 
@@ -126,6 +132,7 @@ public class Formulario {
         painel.add(lblPrazo);
         painel.add(lblTipo);
         painel.add(lblResultado);
+        painel.add(lblLucro);
 
         painel.add(txtValor);
         painel.add(txtPrazo);

@@ -2,6 +2,8 @@
 
 ---
 
+Autor: Cauê Gayoso Tavares da Silva, ADS5
+
 Escrita em java, OpenJDK25.
 Feita com Swing.
 
@@ -15,8 +17,8 @@ Feita com Swing.
 
 [Documentação Oficial - Oracle Swing](https://docs.oracle.com/javase/tutorial/uiswing/)
 
-[Oracle Swing - ](https://docs.oracle.com/javase/tutorial/uiswing/components/combobox.html)
+[Oracle Swing - Combobox](https://docs.oracle.com/javase/tutorial/uiswing/components/combobox.html)
 
-[Oracle Swing - ](https://docs.oracle.com/javase/tutorial/uiswing/components/html.html)
+[Oracle Swing - HTML Components](https://docs.oracle.com/javase/tutorial/uiswing/components/html.html)
 
 [Java Exception Handling](https://www.geeksforgeeks.org/java/exceptions-in-java/)
