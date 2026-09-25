@@ -21,7 +21,7 @@ public class Formulario {
     private JLabel lblValor, lblPrazo, lblTipo, lblResultado, lblLucro;
     private JTextField txtValor, txtPrazo;
     private JComboBox<String> cbxInvestimento;
-    private JButton btnCalcular;
+    private JButton btnCalcular, btnLimpar;
 
     public Formulario() {
         inicializarComponentes();
@@ -79,7 +79,7 @@ public class Formulario {
         cbxInvestimento.setBounds(180, 110, 150, 25);
 
         btnCalcular = new JButton("Calcular Rendimento");
-        btnCalcular.setBounds(30, 155, 300, 30);
+        btnCalcular.setBounds(30, 155, 160, 30);
         btnCalcular.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -127,6 +127,23 @@ public class Formulario {
                 }
             }
         });
+        
+        btnLimpar = new JButton("Limpar");
+        btnLimpar.setBounds(200, 155, 130, 30);
+        btnLimpar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                txtValor.setText("");
+                txtPrazo.setText("");
+
+                cbxInvestimento.setSelectedIndex(0);
+
+                lblResultado.setText("Resultado Total: R$ 0.00");
+                lblLucro.setText("Rendimento Bruto: R$ 0.00");
+
+                txtValor.requestFocus();
+            }
+        });
 
         painel.add(lblValor);
         painel.add(lblPrazo);
@@ -138,6 +155,7 @@ public class Formulario {
         painel.add(txtPrazo);
         painel.add(cbxInvestimento);
         painel.add(btnCalcular);
+        painel.add(btnLimpar);
 
         form.setVisible(true);
     }
