@@ -7,7 +7,9 @@ Feita com Swing.
 
 ---
 
-![Java_Logo](Assets/java_logo.png)
+<p align="center">
+  <img src="Assets/java_logo.png" alt="Java Logo" width="150" />
+</p>
 
 ### Referências:
 
